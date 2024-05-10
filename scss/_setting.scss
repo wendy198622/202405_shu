@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Noto+Serif+Display:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.material-icons{
+  @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+    }
+}
+//setting
+$_color1: #3E3A39;
+$_font1: 'Noto Serif TC', sans-serif;
+$_font2: 'Noto Sans TC', sans-serif;
+
+body{ font-family: $_font2;}
+*{ box-sizing: border-box; color: $_color1; font-family: $_font2;}
+a, a:hover, a:active, a:visited{ color: $_color1; text-decoration: none; display: block; transition: all .3s; outline: 0;}
+img{ width: 100%; display: block;}
+
+
+input, button, textarea{
+  appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none; 
+  -ms-appearance:none; 
+  border: 0;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.popup{
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s;
+  .popup_content{
+      width: 300px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      background-color: #fff;
+      color: #000000;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      &.popup_img{
+          width: 600px;
+          height: 600px;
+          padding: 50px;
+          @media (max-width:600px){
+              width: 100vw;
+              height: 100vw;
+              padding: 10vw;
+          }
+      }
+      &.popup_mov, iframe{
+          width: 1080px;
+          height: 608px;
+          // padding: 50px;
+          outline: 10px solid #fff;
+          overflow: hidden;
+          @media (max-width:1200px){
+              width: 800px;
+              height: 450px;
+              // padding: 40px;
+          }
+          @media (max-width:1000px){
+              width: 640px;
+              height: 362px;
+              // padding: 30px;
+          }
+          @media (max-width:660px){
+              width: 400px;
+              height: 226px;
+          }
+          @media (max-width:420px){
+              width: 320px;
+              height: 180px;
+          }
+          @media (max-width:400px){
+              width: 280px;
+              height: 157px;
+          }
+          // .content{
+          //   width: auto;
+          //   height: 100%;
+          //   overflow: hidden;
+          // }
+      }
+      &.popup_code{
+          width: 500px;
+          height: 500px;
+          padding: 20px;
+          @media (max-width:600px){
+              width: 100vw;
+              height: 100vw;
+              padding: 10vw;
+          }
+      }
+      &.popup_message{
+          width: 320px;
+          height: 60px;
+          line-height: 60px;
+      }
+      .close{
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          z-index: 10;
+          right: 6px;
+          top: 6px;
+          text-align: center;
+          i{
+              font-size: 32px;
+              line-height: 40px;
+          }
+          &:hover{
+              cursor: pointer;
+          }
+      }
+  }
+  &.is_acted{
+      opacity: 1;
+      visibility: visible;
+  }
+}
+.slick-slide, .slick-slide *{ outline: none !important; }
+
+
+.slick-slider{
+//     position: relative;
+
+    &.slick-dotted.slick-slider{
+//         margin-bottom: 0;
+
+//         .slick-slide > div > div{
+//             margin-bottom: -5px;
+//         }
+    
+        .slick-dots{
+            bottom: 16px;
+
+            li{
+                width: 10px;
+                padding: 0;
+                margin-right: 0;
+
+                button{
+                    width: 8px;
+                    height: 8px;
+                    padding: 2px;
+                    background-color: #000;
+                    border-radius: 10px;
+                    opacity: 0.5;
+                    &:before,
+                    &:after{
+                        display: none;
+                    }
+                }
+
+                &.slick-active{
+                    // width: 52px;
+                    
+                    button{
+                        // width: 50px;
+                        margin-right: 2px;
+                        opacity: 1;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    button{
+
+        &.prev{
+            left: 0px;
+        }
+
+        &.next{
+            left:50px;
+        }
+        &.prev, &.next{
+            position: absolute;
+            z-index: 5;
+            bottom: 0%;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        
+            a {
+                display: inline-block;
+                position: relative;
+                height: 40px;
+                width: 40px;
+                background: $_color1;
+
+                span{
+                    color: #fff;
+                    text-align: center;
+                    margin: 8px 0;
+                }
+            }
+    
+            &.slick-disabled{
+                a{
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+
+    }
+}
+
+h2, h3, h4, h5, h6{
+    line-height: 1.6;
+    letter-spacing: 6px;
+    font-family: $_font1;
+    text-transform: uppercase;
+    font-weight: 600;
+    @media (max-width:960px){
+        letter-spacing: 3px;
+    }
+}
+h2{
+    font-size: 42px;
+    @media (max-width:960px){
+        font-size: 36px;
+    }
+}
+h3{
+    font-size: 36px;
+    @media (max-width:960px){
+        font-size: 32px;
+    }
+}
+h4{
+    font-size: 30px;
+    @media (max-width:960px){
+        font-size: 24px;
+    }
+}
+h5{
+    font-size: 24px;
+    @media (max-width:960px){
+        font-size: 20px;
+    }
+}
+h6{
+    font-size: 18px;
+    @media (max-width:960px){
+        font-size: 16px;
+    }
+
+    &.gray{
+        color: #afafaf;
+        letter-spacing: 10px;
+    }
+}
+p{
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: justify;
+    @media (max-width:960px){
+        font-size: 16px;
+    }
+}
+.align-center{
+    text-align: center;
+}
+.mr20{
+    margin-right: 20px;
+}
+.mr60{
+    margin-right: 60px;
+}
+.container{
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width:1360px){
+        width: calc(100% - 100px);
+    }
+    @media (max-width:1080px){
+        width: calc(100% - 60px);
+    }
+}
+
+.link_large{
+    width: 180px;
+    background: $_color1;
+    transition: all .3s;
+    a{
+        font-size: 20px;
+        font-family: $_font1;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 2.4;
+        letter-spacing: 4px;
+        color: #fff;
+        text-align: center;
+        @media (max-width:960px){
+            font-size: 16px;
+        }
+    }
+    &:hover{                    
+        background: #1A1816;
+    }
+}
+
+.link_small{
+    width: 90px;
+    background: $_color1;
+    transition: all .3s;
+    a{
+        font-size: 16px;
+        font-family: $_font1;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 2;
+        letter-spacing: 2px;
+        color: #fff;
+        text-align: center;
+    }
+    &:hover{                    
+        background: #1A1816;
+    }
+}
