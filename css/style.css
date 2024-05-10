@@ -902,6 +902,7 @@ section .theme8 .subtitle img {
 
 section .theme9 {
   position: relative;
+  background-size: 100% 100%;
 }
 
 @media (max-width: 960px) {
