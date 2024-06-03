@@ -271,15 +271,14 @@
             },
             sendEmail: function() {
                 var self = this;
-                // var tomail = "roger19910106@gmail.com" //信箱 
-                var tomail = "w7e5n@hotmail.com" //信箱 
+                var tomail = "roger19910106@gmail.com" //信箱 
                 var to_name = "新理想建設" //信件名稱
 
                 var subject = "我要預約上樞大芢看房" //信件主旨
-                var content = "姓名:" + self.name + "\n" +
-                    "手機:" + self.phone + "\n" +
-                    "E-mail:" + self.email + "\n" +
-                    "居住縣市:" + self.city + "\n" +
+                var content = "姓名:" + self.name + "<br>" +
+                    "手機:" + self.phone + "<br>" +
+                    "E-mail:" + self.email + "<br>" +
+                    "居住縣市:" + self.city + "<br>" +
                     "鄉鎮區域:" + self.area + "\n" ;
 
                 // if (!self.check) {
