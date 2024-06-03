@@ -51,6 +51,7 @@ input, button, textarea {
 
 .popup {
   width: 100%;
+  max-width: 100% !important;
   min-height: 100%;
   position: fixed;
   z-index: 100;
