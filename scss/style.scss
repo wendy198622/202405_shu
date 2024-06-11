@@ -40,7 +40,7 @@ section{
     .theme7{ background-image: url(../img/theme7_bg.png);}
     .theme8{ background-image: url(../img/theme8_bg.png);}
     .theme9{ background-image: url(../img/theme9_bg.png);}
-    .theme10{ background-image: url(../img/theme10_bg.png);}
+    .theme11{ background-image: url(../img/theme10_bg.png);}
 
     @media (max-width:960px){
         .theme1{ background-image: url(../img/theme1_bg_mob.png);}
@@ -52,7 +52,7 @@ section{
         .theme7{ background-image: url(../img/theme7_bg_mob.png);}
         .theme8{ background-image: url(../img/theme8_bg_mob.png);}
         // .theme9{ background-image: url(../img/theme9_bg_mob.png);}
-        .theme10{ background-image: url(../img/theme10_bg_mob.png);}
+        .theme11{ background-image: url(../img/theme10_bg_mob.png);}
     }
     .theme{
         height: 100%;
@@ -352,6 +352,19 @@ section{
         }
     }
     .theme10{
+        .photo{
+            width: 100%;
+            max-width: 100% !important;
+            // margin-left: 12%;
+        }
+        .swiper-button-prev{
+            left: 8%;
+        }
+        .swiper-button-next{
+            right: 12%;
+        }
+    }
+    .theme11{
         height: 100%;
         @media (max-width:960px){
             background-size: 100% auto;
